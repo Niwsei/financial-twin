@@ -1,10 +1,15 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {};
 
-import bundleAnalyzer from "@next/bundle-analyzer";
-
-const withBundleAnalyzer = bundleAnalyzer({
-  enabled: process.env.ANALYZE === "true",
-});
+// Conditionally import and use the bundle analyzer
+let withBundleAnalyzer;
+if (process.env.ANALYZE === 'true') {
+  const bundleAnalyzer = (await import('@next/bundle-analyzer')).default;
+  withBundleAnalyzer = bundleAnalyzer({
+    enabled: true,
+  });
+} else {
+  withBundleAnalyzer = (config) => config;
+}
 
 export default withBundleAnalyzer(nextConfig);
