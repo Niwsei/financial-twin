@@ -35,6 +35,18 @@ const DashboardNav = () => {
             <Link href="/analytics" className="text-sm font-medium hover:text-primary transition-colors">
               Analytics
             </Link>
+            <Link href="/profile" className="text-sm font-medium hover:text-primary transition-colors">
+              Profile
+            </Link>
+            <Link href="/clients" className="text-sm font-medium hover:text-primary transition-colors">
+              Clients
+            </Link>
+            <Link href="/goals" className="text-sm font-medium hover:text-primary transition-colors">
+              Goals
+            </Link>
+            <Link href="/invoices" className="text-sm font-medium hover:text-primary transition-colors">
+              Invoices
+            </Link>
           </div>
 
           {/* Right Actions */}
@@ -44,11 +56,13 @@ const DashboardNav = () => {
               <span className="absolute top-1 right-1 w-2 h-2 bg-destructive rounded-full" />
             </Button>
             
-            <Button variant="ghost" size="icon" className="rounded-full">
-              <div className="w-8 h-8 rounded-full gradient-primary flex items-center justify-center">
-                <User className="w-4 h-4 text-primary-foreground" />
-              </div>
-            </Button>
+            <Link href="/profile">
+              <Button variant="ghost" size="icon" className="rounded-full">
+                <div className="w-8 h-8 rounded-full gradient-primary flex items-center justify-center">
+                  <User className="w-4 h-4 text-primary-foreground" />
+                </div>
+              </Button>
+            </Link>
           </div>
         </div>
       </div>

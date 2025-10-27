@@ -89,15 +89,28 @@ ${colorConfig
 
 const ChartTooltip = RechartsPrimitive.Tooltip;
 
+type TooltipPayload = {
+  dataKey?: string;
+  value?: number | string;
+  name?: string;
+  color?: string;
+  payload?: any; // The original data point
+}[];
+
 const ChartTooltipContent = React.forwardRef<
   HTMLDivElement,
-  React.ComponentProps<typeof RechartsPrimitive.Tooltip> &
+  React.ComponentPropsWithoutRef<typeof RechartsPrimitive.Tooltip> &
     React.ComponentProps<"div"> & {
+      payload?: TooltipPayload;
       hideLabel?: boolean;
       hideIndicator?: boolean;
       indicator?: "line" | "dot" | "dashed";
       nameKey?: string;
       labelKey?: string;
+      label?: string | number;
+      labelFormatter?: RechartsPrimitive.TooltipProps<any, any>["labelFormatter"];
+      formatter?: RechartsPrimitive.TooltipProps<any, any>["formatter"];
+      color?: string;
     }
 >(
   (
@@ -227,10 +240,20 @@ ChartTooltipContent.displayName = "ChartTooltip";
 
 const ChartLegend = RechartsPrimitive.Legend;
 
+type LegendPayload = {
+  dataKey?: string;
+  value?: string;
+  id?: string;
+  type?: string;
+  color?: string;
+  payload?: any; // The original data point
+}[];
+
 const ChartLegendContent = React.forwardRef<
   HTMLDivElement,
   React.ComponentProps<"div"> &
-    Pick<RechartsPrimitive.LegendProps, "payload" | "verticalAlign"> & {
+    React.ComponentPropsWithoutRef<typeof RechartsPrimitive.Legend> & {
+      payload?: LegendPayload;
       hideIcon?: boolean;
       nameKey?: string;
     }
