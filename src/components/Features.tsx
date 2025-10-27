@@ -1,5 +1,6 @@
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import Image from "next/image";
 
 const features = [
   {
@@ -28,11 +29,11 @@ const Features = () => {
       <div className="container mx-auto">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16 animate-fade-in">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
             Everything You Need to
             <span className="text-gradient"> Manage Wealth</span>
           </h2>
-          <p className="text-xl text-muted-foreground">
+          <p className="text-lg sm:text-xl text-muted-foreground">
             Powerful features designed for modern investors and traders
           </p>
         </div>
@@ -48,10 +49,11 @@ const Features = () => {
               {/* Feature Image */}
               <div className="relative mb-6 rounded-xl overflow-hidden aspect-square">
                 <div className={`absolute inset-0 bg-gradient-to-br ${feature.gradient} z-10`} />
-                <img 
-                  src={feature.image} 
+                <Image
+                  src={feature.image}
                   alt={feature.title}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                  layout="fill"
+                  className="object-cover group-hover:scale-110 transition-transform duration-500"
                 />
               </div>
 

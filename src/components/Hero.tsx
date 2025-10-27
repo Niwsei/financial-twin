@@ -31,27 +31,27 @@ const Hero = () => {
           </div>
 
           {/* Main Heading */}
-          <h1 className="text-5xl md:text-7xl font-bold leading-tight">
+          <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold leading-tight">
             Your Digital
             <br />
             <span className="text-gradient">Financial Twin</span>
           </h1>
 
           {/* Subheading */}
-          <p className="text-xl md:text-2xl text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-lg sm:text-xl md:text-2xl text-muted-foreground max-w-2xl mx-auto">
             Experience next-generation portfolio management with real-time insights, 
             AI-powered analytics, and seamless trading integration.
           </p>
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-4">
-            <Button size="lg" className="gradient-primary text-primary-foreground font-semibold px-8 group" asChild>
+            <Button size="lg" className="w-full sm:w-auto gradient-primary text-primary-foreground font-semibold px-8 group" asChild>
               <Link href="/dashboard">
                 Get Started Free
                 <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Link>
             </Button>
-            <Button size="lg" variant="outline" className="font-semibold px-8">
+            <Button size="lg" variant="outline" className="w-full sm:w-auto font-semibold px-8">
               Watch Demo
             </Button>
           </div>

@@ -4,10 +4,10 @@ const Footer = () => {
   return (
     <footer className="border-t border-border/50 py-12 px-4">
       <div className="container mx-auto">
-        <div className="grid md:grid-cols-4 gap-8 mb-8">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8 text-center md:text-left">
           {/* Brand */}
           <div className="space-y-4">
-            <div className="flex items-center gap-2 font-bold text-xl">
+            <div className="flex items-center justify-center md:justify-start gap-2 font-bold text-xl">
               <div className="w-8 h-8 rounded-lg gradient-primary flex items-center justify-center">
                 <TrendingUp className="w-5 h-5 text-primary-foreground" />
               </div>
